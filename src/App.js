@@ -1,24 +1,19 @@
-import logo from './logo.svg';
-import './App.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import React, { createContext, useState } from 'react';
+
+import HomePage from './components/Pages/HomePage';
+
+export const infoContext = createContext()
 
 function App() {
+  const [info, setInfo] = useState({})
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <infoContext.Provider value={[info, setInfo]}>
+      <>
+        <HomePage></HomePage>
+      </>
+    </infoContext.Provider>
   );
 }
 
