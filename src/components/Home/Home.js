@@ -1,12 +1,13 @@
-import AddBlogs from '../Blogs/AddBlogs/AddBlogs';
-import Blogs from '../Blogs/Blogs/Blogs';
-import Navbar from '../Header/Navbar/Navbar'
-import HomePage from '../Pages/HomePage';
 import {
     BrowserRouter as Router,
     Switch,
     Route,
 } from "react-router-dom";
+import AddBlogs from '../Blogs/AddBlogs/AddBlogs';
+import Blogs from '../Blogs/Blogs/Blogs';
+import Navbar from '../Header/Navbar/Navbar'
+import HomePage from '../Pages/HomePage';
+import Login from '../Login/Login';
 
 const Home = () => {
     return (
@@ -16,13 +17,14 @@ const Home = () => {
                 <Route exact path="/">
                     <HomePage />
                 </Route>
-
                 <Route path="/blogs">
                     <Blogs />
                 </Route>
-
                 <Route path="/addBlogs">
                     <AddBlogs />
+                </Route>
+                <Route path="/login">
+                    <Login />
                 </Route>
             </Switch>
         </Router>

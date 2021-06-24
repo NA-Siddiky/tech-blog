@@ -6,9 +6,13 @@ export const infoContext = createContext()
 
 function App() {
   const [info, setInfo] = useState({})
+  const contextData = {
+    info,
+    setInfo,
+  }
 
   return (
-    <infoContext.Provider value={[info, setInfo]}>
+    <infoContext.Provider value={contextData}>
       <>
         <Home></Home>
       </>

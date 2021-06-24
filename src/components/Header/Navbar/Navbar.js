@@ -1,7 +1,38 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { infoContext } from '../../../App';
+import { Link } from 'react-router-dom';
+import { FaLongArrowAltRight } from 'react-icons/fa';
+import firebase from 'firebase/app';
+import 'firebase/auth';
+
 
 const Navbar = () => {
+    const { info, setInfo } = useContext(infoContext);
+    const { isSignedIn, name } = info;
+
+    const handleSignOut = () => {
+        // console.log('Sign out clicked');
+        firebase
+            .auth()
+            .signOut()
+            .then((res) => {
+                const signedOutUser = {
+                    isSignedIn: false,
+                    name: '',
+                    email: '',
+                };
+                setInfo(signedOutUser);
+                // console.log(res);
+            })
+            .catch((error) => {
+                console.log('Error:', error);
+                console.log('Error Message:', error.message);
+            });
+    };
+
+
     return (
+
         <div className="container">
             <nav class="navbar navbar-expand-lg navbar-light">
                 <div class="container-fluid">
@@ -20,9 +51,26 @@ const Navbar = () => {
                             <li class="nav-item">
                                 <a class="nav-link" href="/addBlogs">Add Blogs</a>
                             </li>
-                            <li class="nav-item">
+                            {/* <li class="nav-item">
                                 <a class="nav-link" href="/login">Login</a>
-                            </li>
+                            </li> */}
+
+                            {isSignedIn ? (
+                                <>
+                                    <li className="nav-item">
+                                        <button className="btn btn-primary" onClick={handleSignOut}>
+                                            <>{name} <FaLongArrowAltRight /></>
+                                        </button>
+                                    </li>
+                                </>
+                            ) : (
+                                <Link className="nav-link" to="/login">
+                                    Login
+                                </Link>
+                            )}
+
+
+
                         </ul>
                     </div>
                 </div>
