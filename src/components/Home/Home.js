@@ -1,6 +1,7 @@
 import AddBlogs from '../Blogs/AddBlogs/AddBlogs';
 import Blogs from '../Blogs/Blogs/Blogs';
 import Navbar from '../Header/Navbar/Navbar'
+import HomePage from '../Pages/HomePage';
 import {
     BrowserRouter as Router,
     Switch,
@@ -12,6 +13,9 @@ const Home = () => {
         <Router>
             <Navbar />
             <Switch>
+                <Route exact path="/">
+                    <HomePage />
+                </Route>
 
                 <Route path="/blogs">
                     <Blogs />
@@ -20,7 +24,6 @@ const Home = () => {
                 <Route path="/addBlogs">
                     <AddBlogs />
                 </Route>
-
             </Switch>
         </Router>
     );

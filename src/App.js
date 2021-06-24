@@ -1,7 +1,6 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import React, { createContext, useState } from 'react';
-
-import HomePage from './components/Pages/HomePage';
+import Home from './components/Home/Home';
 
 export const infoContext = createContext()
 
@@ -11,7 +10,7 @@ function App() {
   return (
     <infoContext.Provider value={[info, setInfo]}>
       <>
-        <HomePage></HomePage>
+        <Home></Home>
       </>
     </infoContext.Provider>
   );
