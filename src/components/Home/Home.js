@@ -3,7 +3,7 @@ import {
     Switch,
     Route,
 } from "react-router-dom";
-import AddBlogs from '../Blogs/AddBlogs/AddBlogs';
+import AddBlog from '../Blogs/AddBlog/AddBlog';
 import Blogs from '../Blogs/Blogs/Blogs';
 import Navbar from '../Header/Navbar/Navbar'
 import HomePage from '../Pages/HomePage';
@@ -20,8 +20,8 @@ const Home = () => {
                 <Route path="/blogs">
                     <Blogs />
                 </Route>
-                <Route path="/addBlogs">
-                    <AddBlogs />
+                <Route path="/addBlog">
+                    <AddBlog />
                 </Route>
                 <Route path="/login">
                     <Login />
