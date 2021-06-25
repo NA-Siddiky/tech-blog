@@ -51,9 +51,9 @@ const Navbar = () => {
                             <li class="nav-item">
                                 <a class="nav-link" href="/addBlog">Add Blogs</a>
                             </li>
-                            {/* <li class="nav-item">
-                                <a class="nav-link" href="/login">Login</a>
-                            </li> */}
+                            <li class="nav-item">
+                                <a class="nav-link" href="/admin">Admin</a>
+                            </li>
 
                             {isSignedIn ? (
                                 <>
