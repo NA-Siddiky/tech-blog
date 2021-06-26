@@ -7,13 +7,13 @@ import BlogData from '../Blogs/BlogData/BlogData';
 function ManageBlog() {
     const [Blogs, setBlog] = useState([]);
     useEffect(() => {
-        axios.get("http://localhost:5000/api/blogs")
+        axios.get("https://tech-blog-ph.herokuapp.com/api/blogs")
             .then((response) => {
                 setBlog(response.data.response);
             });
     }, []);
     const addBlog = (id, status) => {
-        axios.put(`http://localhost:5000/api/blogs/${id}`, {status})
+        axios.put(`https://tech-blog-ph.herokuapp.com/api/blogs/${id}`, {status})
             .then((res) => {
                 console.log(res);
                 history.push('/admin/manageBlog/')

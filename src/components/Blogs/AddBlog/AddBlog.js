@@ -11,7 +11,7 @@ const AddBlog = () => {
 
         data.imgUrl = imageURL;
         console.log(data);
-        const url = "http://localhost:5000/api/blogs";
+        const url = "https://tech-blog-ph.herokuapp.com/api/blogs";
         fetch(url, {
             method: 'POST',
             headers: {

@@ -9,7 +9,7 @@ const BlogDetails = () => {
     const [blogs, setBlogs] = useState({});
     console.log(blogs)
     useEffect(() => {
-        axios.get(`http://localhost:5000/api/blogs/${blogId}`).then((data) => setBlogs(data.data.response));
+        axios.get(`https://tech-blog-ph.herokuapp.com/api/blogs/${blogId}`).then((data) => setBlogs(data.data.response));
     }, [blogId]);
 
     return (
