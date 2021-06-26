@@ -2,6 +2,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import React, { createContext, useState } from 'react';
 import Home from './components/Home/Home';
 
+
 export const infoContext = createContext()
 
 function App() {

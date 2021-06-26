@@ -9,6 +9,7 @@ import Navbar from '../Header/Navbar/Navbar'
 import HomePage from '../Pages/HomePage';
 import Admin from '../Admin/Admin'
 import Login from '../Login/Login';
+import BlogDetails from "../Blogs/BlogDetails/BlogDetails";
 
 const Home = () => {
     return (
@@ -18,8 +19,8 @@ const Home = () => {
                 <Route exact path="/">
                     <HomePage />
                 </Route>
-                <Route path="/blogs">
-                    <Blogs />
+                <Route path="/blog/:blogId">
+                    <BlogDetails />
                 </Route>
                 <Route path="/addBlog">
                     <AddBlog />

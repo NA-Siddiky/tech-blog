@@ -1,5 +1,8 @@
 import React, { useEffect, useState } from 'react';
+import { Link } from "react-router-dom";
+import './HomePage.css';
 import Blogs from '../Blogs/Blogs/Blogs'
+import blogImage from '../../images/blogImage.jpg';
 
 const HomePage = () => {
     const [blogs, setBlogs] = useState([]);
@@ -20,18 +23,16 @@ const HomePage = () => {
         // </div>
 
         <div className="container">
-            <div class="card mb-3">
-                {blogs.map((blog) => (
-                    <>
-                        <img src={blog.imgUrl} className="card-img-top"/>
-                        <div class="card-body">
-                            <h5 class="card-title">{blog.title}</h5>
-                            <p class="card-text">{blog.description}</p>
-                            <button>See Details</button>
-                        </div>
-                    </>
-                ))}
-            </div>
+            {blogs.map((blog) => (
+                <div class="card mb-3 border-0 my-5 blog-card">
+                    <img src={blog.imgUrl} height="300px" className="card-img-top" />
+                    <div class="card-body px-4">
+                        <h2 class="card-title">{blog.title}</h2>
+                        <p>{blog.description}</p>
+                        <Link to={`/blog/${blog._id}`} className="btn btn-primary my-3">See Details</Link>
+                    </div>
+                </div>
+            ))}
         </div>
 
     );
