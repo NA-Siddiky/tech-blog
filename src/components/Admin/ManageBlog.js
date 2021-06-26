@@ -13,9 +13,9 @@ function ManageBlog() {
             });
     }, []);
     const addBlog = (id, status) => {
-        axios.put(`http://localhost:5000/api/blogs/${id}`, status)
+        axios.put(`http://localhost:5000/api/blogs/${id}`, {status})
             .then((res) => {
-                console.log(res)
+                console.log(res);
                 history.push('/admin/manageBlog/')
             });
     };

@@ -10,7 +10,11 @@ const HomePage = () => {
     useEffect(() => {
         fetch('http://localhost:5000/api/blogs')
             .then((res) => res.json())
-            .then((data) => setBlogs(data.response));
+            .then((data) => {
+                console.log(data.response)
+                const filterBlog = data.response.filter(item => item.status === 'publish');
+                setBlogs(filterBlog);
+            });
     }, []);
 
 

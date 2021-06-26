@@ -10,6 +10,7 @@ import HomePage from '../Pages/HomePage';
 import Admin from '../Admin/Admin'
 import Login from '../Login/Login';
 import BlogDetails from "../Blogs/BlogDetails/BlogDetails";
+import PrivateRoutes from "../routes/PrivateRoutes";
 
 const Home = () => {
     return (
@@ -22,12 +23,12 @@ const Home = () => {
                 <Route path="/blog/:blogId">
                     <BlogDetails />
                 </Route>
-                <Route path="/addBlog">
+                <PrivateRoutes path="/addBlog">
                     <AddBlog />
-                </Route>
-                <Route path="/admin">
+                </PrivateRoutes>
+                <PrivateRoutes path="/admin">
                     <Admin />
-                </Route>
+                </PrivateRoutes>
                 <Route path="/login">
                     <Login />
                 </Route>

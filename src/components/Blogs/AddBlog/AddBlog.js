@@ -9,7 +9,7 @@ const AddBlog = () => {
 
     const onSubmit = data => {
 
-        data.imageUrl = imageURL;
+        data.imgUrl = imageURL;
         console.log(data);
         const url = "http://localhost:5000/api/blogs";
         fetch(url, {
